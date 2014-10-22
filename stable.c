@@ -33,9 +33,7 @@ end  \
   \
   \
 local function _collect(root)  \
-  local record = {} \
-  record[stable_rootidx] = true \
-  _mark(root, record)  \
+  local record = _mark(root, { [stable_rootidx] = true })  \
   \
   for k,v in pairs(stable_cache) do  \
     if not record[k] then  \
